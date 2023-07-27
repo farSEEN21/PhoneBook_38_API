@@ -1,5 +1,6 @@
 package dto;
 
+import Helper.contactHelper;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
@@ -24,4 +25,5 @@ String email;
 String phone;
 String address;
 String description;
+
 }

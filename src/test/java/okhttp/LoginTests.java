@@ -42,10 +42,21 @@ public class LoginTests {
         {
             System.out.println("Response code is "+response.code());
             ErrorDto errorDto=gson.fromJson(response.body().string(), ErrorDto.class);
-            System.out.println(errorDto.getStatus()+" "+errorDto.getError()+" "+errorDto.getMessage());
+          //TODO
+            //  System.out.println(errorDto.getStatus()+" "+errorDto.getError()+" "+errorDto.getMessage());
             Assert.assertTrue(response.isSuccessful());
 
         }
+
+    }
+
+    public static class RegistrationTests {
+
+
+
+
+
+
 
     }
 }
