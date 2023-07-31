@@ -5,12 +5,13 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import okhttp3.RequestBody;
 
 @Builder
 @Getter
 @Setter
 @ToString
-public class ContactDTO {
+public class ContactDTO   {
 //          "id": "string",
 //                  "name": "string",
 //                  "lastName": "string",

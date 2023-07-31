@@ -1,15 +1,21 @@
 package Helper;
 
+import com.google.gson.Gson;
 import dto.RequestBodyContactDTO;
 import okhttp3.MediaType;
+import okhttp3.OkHttpClient;
 
 import java.util.Random;
 
 public interface contactHelper {
     MediaType Json = MediaType.get("application/json; charset=utf-8");
+    Gson gson = new Gson();
+    OkHttpClient okHttpClient = new OkHttpClient();
 
-    String TOKEN = "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX1VTRVIiXSwic3ViIjoiYUBhMS5ydSIsImlzcyI6IlJlZ3VsYWl0IiwiZXhwIjoxNjkwOTA3NDI2LCJpYXQiOjE2OTAzMDc0MjZ9.hWyCo6sCRyI9YNp6UDlKqobcEVpKy6-Jzn50R5_h-gw";
-
+    String TOKEN = "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX1VTRVIiXSwic3ViIjoiYUBhMS5ydSIsImlzcyI6IlJlZ3VsYWl0IiwiZXhwIjoxNjkxNDI3MzM2LCJpYXQiOjE2OTA4MjczMzZ9.icpHlIF_K8uxFZHblU8obnkQQEBCNaNEcw2jIAvcl-k";
+    String baseurl="https://contactapp-telran-backend.herokuapp.com";
+    String path="v1";
+    int i =new Random().nextInt(1000)+1000;
 
     default RequestBodyContactDTO createContact() {
         String i = Integer.toString((int) (System.currentTimeMillis() / 1000) % 3600);
@@ -87,8 +93,7 @@ public interface contactHelper {
     }
 
     default String generateRandompsw() {
-          String UPPER = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$^&*abcdefghijklmnopqrstuvwxyz";
-
+        String UPPER = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$^&*abcdefghijklmnopqrstuvwxyz";
 
 
         Random random = new Random();
@@ -98,14 +103,13 @@ public interface contactHelper {
 
         for (int i = 0; i < 8; i++) {
             int randomIndex = random.nextInt(length);
-            text =  text+UPPER.charAt(randomIndex);
+            text = text + UPPER.charAt(randomIndex);
 
-}
-
+        }
 
 
         return text;
     }
 
-
+    String authHeader = "Authorization";
 }

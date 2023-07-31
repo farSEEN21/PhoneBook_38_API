@@ -14,7 +14,7 @@ public class ErrorDto {
 
     int status;
     String error;
-    //  String message;
+  Object message;
 
     //      "timestamp": "2023-07-25T16:08:31.689Z",
 //              "status": 0,
